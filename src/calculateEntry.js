@@ -7,5 +7,5 @@ const countEntrants = (entrants) => {
 const calculateEntry = (entrants) => {
   // seu código aqui
 };
-
+// iniciando o projeto
 module.exports = { calculateEntry, countEntrants };
