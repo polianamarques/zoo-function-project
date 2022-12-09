@@ -8,6 +8,12 @@ const countAnimals = (animal) => {
     }, {});
   }
   const { residents } = species.find(({ name }) => name === animal.species);
+  if (animal.sex) {
+    const filter = residents.filter((resident) => resident.sex === animal.sex);
+    return filter.length;
+  }
+  return residents.length;
 };
-// console.log(countAnimals());
+// console.log(countAnimals({ species: 'penguins', sex: 'male' }));
+
 module.exports = countAnimals;
