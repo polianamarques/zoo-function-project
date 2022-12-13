@@ -18,4 +18,19 @@ describe('Testes da função getOpeningHours', () => {
       Monday: { open: 0, close: 0 },
     });
   });
+  it('Testa a função com os parametros Monday e 09:00-AM', () => {
+    expect(getOpeningHours('Monday', '09:00-AM')).toBe('The zoo is closed');
+  });
+  it('Testa a função com os parametros Tuesday e 09:00-AM', () => {
+    expect(getOpeningHours('Tuesday', '09:00-AM')).toBe('The zoo is open');
+  });
+  it('Testa a função com os parametros Wednesday e 09:00-AM', () => {
+    expect(getOpeningHours('Wednesday', '09:00-PM')).toBe('The zoo is closed');
+  });
+  it('Testa a função com erros', () => {
+    expect(() => getOpeningHours('Thu', '09:00-PM')).toThrowError('The day must be valid. Example: Monday');
+  });
+  it('Testa a função com erros', () => {
+    expect(() => getOpeningHours('Friday', '09:00-ZM')).toThrowError('The abbreviation must be \'AM\' or \'PM\'');
+  });
 });
