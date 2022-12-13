@@ -33,4 +33,10 @@ describe('Testes da função getOpeningHours', () => {
   it('Testa a função com erros', () => {
     expect(() => getOpeningHours('Friday', '09:00-ZM')).toThrowError('The abbreviation must be \'AM\' or \'PM\'');
   });
+  it('Testa a função com  novos erros', () => {
+    expect(() => getOpeningHours('Saturday', 'C9:00-AM')).toThrowError('The hour should represent a number');
+  });
+  it('Testa a função com  novos erros', () => {
+    expect(() => getOpeningHours('Sunday', '09:c0-AM')).toThrowError('The minutes should represent a number');
+  });
 });
