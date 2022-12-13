@@ -1,14 +1,10 @@
-const data = require('../data/zoo_data');
-
-const person = (id) => data.employees.find((employees) => employees.id === id).responsibleFor[0];
-const animals = (responsibleId) => data.species.find((animal) => animal.id === person).residents;
-const oldest = (animal) => animals.sort((a, b) => b.age - a.age)[0];
+const { employees, species } = require('../data/zoo_data');
 
 const getOldestFromFirstSpecies = (id) => {
-  const $animal = person(id);
-  const $species = animals($animal);
-  const $oldest = oldest($species);
-  return Object.values($oldest);
+  const person = employees.find((employee) => employee.id === id).responsibleFor[0];
+  const animal = species.find((specie) => specie.id === person).residents;
+  const result = animal.sort((animal1, animal2) => animal2.age - animal1.age)[0];
+  return Object.values(result);
 };
 console.log(getOldestFromFirstSpecies('78460a91-f4da-4dea-a469-86fd2b8ccc84'));
 
