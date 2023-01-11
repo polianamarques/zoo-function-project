@@ -17,6 +17,18 @@ const animalOfTheWeek = (dayOfTheWeek) => {
 };
 // console.log(animalOfTheWeek('Tuesday'));
 
+const officeHours = (day) => {
+  const { hours } = data;
+  const hoursOfWeek = hours[day];
+  const object = {
+    [day]: {
+      officeHour: `Open from ${hoursOfWeek.open}am until ${hoursOfWeek.close}pm`,
+      exhibition: animalOfTheWeek(day),
+
+    },
+  };
+  return object;
+};
 const getSchedule = (scheduleTarget) => {
   // seu código aqui
 };
