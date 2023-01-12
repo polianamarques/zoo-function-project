@@ -33,8 +33,8 @@ const officeHours = (day) => {
 
 const monday = {
   Monday: {
-    officeHour: 'Closed',
-    exhibition: 'The zoo will be closed',
+    officeHour: 'CLOSED',
+    exhibition: 'The zoo will be closed!',
   },
 };
 
@@ -65,4 +65,5 @@ const getSchedule = (scheduleTarget) => {
   return schedule;
 };
 console.log(getSchedule('Wednesday'));
+
 module.exports = getSchedule;
