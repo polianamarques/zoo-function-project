@@ -37,6 +37,9 @@ const monday = {
     exhibition: 'The zoo will be closed',
   },
 };
+
+// A função, caso receba parâmetros que não sejam nem um animal e nem um dia, retorna os horários para cada dia e quais animais estarão disponíveis;
+
 const schedule = Object.assign(
   officeHours('Tuesday'),
   officeHours('Wednesday'),
@@ -47,7 +50,13 @@ const schedule = Object.assign(
   monday,
 );
 const getSchedule = (scheduleTarget) => {
-  // seu código aqui
-};
+  const areAnimal = data.species.some(({ name }) => name === scheduleTarget);
+  const { hours } = data;
+  const week = Object.keys(hours).includes(scheduleTarget);
+  if (areAnimal === true) {
+    return daysOfTheWeek(scheduleTarget);
+  }
 
+};
+// console.log(getSchedule('Thursday'));
 module.exports = getSchedule;
