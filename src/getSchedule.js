@@ -56,7 +56,13 @@ const getSchedule = (scheduleTarget) => {
   if (areAnimal === true) {
     return daysOfTheWeek(scheduleTarget);
   }
-
+  if (scheduleTarget === 'Monday') {
+    return monday;
+  }
+  if (week === true) {
+    return officeHours(scheduleTarget);
+  }
+  return schedule;
 };
-// console.log(getSchedule('Thursday'));
+console.log(getSchedule('Wednesday'));
 module.exports = getSchedule;
