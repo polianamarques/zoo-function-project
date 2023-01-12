@@ -29,6 +29,23 @@ const officeHours = (day) => {
   };
   return object;
 };
+// console.log(officeHours('Tuesday'));
+
+const monday = {
+  Monday: {
+    officeHour: 'Closed',
+    exhibition: 'The zoo will be closed',
+  },
+};
+const schedule = Object.assign(
+  officeHours('Tuesday'),
+  officeHours('Wednesday'),
+  officeHours('Thursday'),
+  officeHours('Friday'),
+  officeHours('Saturday'),
+  officeHours('Sunday'),
+  monday,
+);
 const getSchedule = (scheduleTarget) => {
   // seu código aqui
 };
