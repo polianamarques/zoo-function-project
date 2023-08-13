@@ -10,7 +10,7 @@ Neste projeto desenvolvi funções para recuperar  informações de um sistema d
 - Array destructuring
 
 # :warning:ATENÇÃO! 
-Arquivo presente na pasta data é de autoria da TRYBE
+O arquivo presente na pasta data é de autoria da TRYBE
 
 ### Contato: 
 <div align=""> <br> <a href = "mailto:contatopolianamarques@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" target="_blank"></a>
